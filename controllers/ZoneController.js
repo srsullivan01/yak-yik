@@ -8,6 +8,7 @@ find: function(params, callback){
       callback(err, null)
       return
     }
+
     callback(null, zones)
   })
 },
@@ -22,14 +23,21 @@ findById: function(id, callback){
   })
 },
 
+
+create: function(params, callback){
+  Zone.create(params, function(err, zone){
+    if (err){
+      callback(err, null)
+      return
+    }
+    callback(null, zone)
+  })
+  
+},
+
 update: function(){
 
 },
-
-create: function(){
-
-},
-
 destroy: function(){
 
 }
